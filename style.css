@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #FFFFFF;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid #CCC;
+  padding: 20px;
+  background-color: #F9F9F9;
+  border-radius: 10px;
+}
+
+h1 {
+  color: #0054A6;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.botoes {
+  margin-top: 15px;
+}
+
+.botoes button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  background: #0054A6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+textarea#resumo {
+  width: 100%;
+  margin-top: 10px;
+}

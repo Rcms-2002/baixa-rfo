@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Baixa/RFO - Alloha Fibra</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>ALLOHA FIBRA - SISTEMA DE BAIXA/RFO</h1>
+    <p id="data-atual"></p>
+
+    <form id="formulario">
+      <label>Descrição* <input type="text" name="descricao" required /></label>
+      <label>Chamado* <input type="text" name="chamado" required /></label>
+      <label>OS* <input type="text" name="os" required /></label>
+      <label>Endereço* <input type="text" name="endereco" required /></label>
+      <label>KM da Falha <input type="text" name="km_falha" /></label>
+      <label>Local Medição <input type="text" name="local_medicao" /></label>
+      <label>Causa*
+        <select name="causa" id="causa" required onchange="mostrarOutros(this.value)">
+          <option value="">Selecione</option>
+          <option>Acidente de Transito</option>
+          <option>Arma de Fogo</option>
+          <option>Atenuação</option>
+          <option>Atividade de Terceiros</option>
+          <option>Cabo Queimado</option>
+          <option>Carga Alta</option>
+          <option>Curto-Circuito</option>
+          <option>Fenômenos da Natureza</option>
+          <option>Fibra Dobrada</option>
+          <option>Fibra Trincada</option>
+          <option>Fogo na Vegetação</option>
+          <option>Furto</option>
+          <option>Incêndio</option>
+          <option>Insetos na CEO</option>
+          <option>Não identificado</option>
+          <option>Outro</option>
+          <option>Poda</option>
+          <option>Queda de Árvore</option>
+          <option>Queda de Bareira</option>
+          <option>Queda de Poste</option>
+          <option>Readequação de Cabo</option>
+          <option>Roedores</option>
+          <option>Sabotagem</option>
+          <option>Suporte BAP</option>
+          <option>Troca de Poste</option>
+          <option>Vandalismo</option>
+        </select>
+      </label>
+      <label id="outrosLabel" style="display: none;">Especifique Outros <input type="text" name="outros_causa" id="outros_causa" /></label>
+      <label>Ação Executada <textarea name="acao_executada" rows="3"></textarea></label>
+      <label>Material Usado <textarea name="material_usado" rows="3"></textarea></label>
+      <label>Fibra <input type="text" name="fibra" /></label>
+      <label>Fusões <input type="text" name="fusoes" /></label>
+      <label>Localização <input type="text" name="localizacao" /></label>
+
+      <div class="botoes">
+        <button type="button" onclick="gerarRelatorio()">GERAR</button>
+        <button type="reset" onclick="limparFormulario()">LIMPAR</button>
+        <button type="button" onclick="copiarRelatorio()">COPIAR</button>
+        <button type="button" onclick="enviarWhatsApp()">WHATSAPP</button>
+        <button type="button" onclick="salvarTxt()">SALVAR</button>
+      </div>
+    </form>
+
+    <h2>Resumo</h2>
+    <textarea id="resumo" readonly rows="10"></textarea>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
